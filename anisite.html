@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin:0; padding:0;}
+		
+		header{
+			height:100px;
+			line-height:100px;
+			padding: 0 20px;
+			background-color:skyblue;
+		}
+		header h1{float:left;}
+		
+		.menubar ul{
+			float:right;
+			height:50px;
+			list-style:none;
+			margin:0;
+		}
+		.menubar ul li{
+			float:left;
+			padding:0;
+			position:relative;
+		}
+		.menubar ul li a{
+			background:rgb(109,109,109);
+			color:#cccccc;
+			display:block;
+			font-weight:normal;
+			line-height:50px;
+			margin:0px;
+			padding:0px 25px;
+			text-align:center;
+			text-decoration:none;
+		}
+		.menubar ul li:hover a{
+			background:rgb(71,71,71);
+			color:#FFFFFF;
+		}
+		.menubar ul li ul{
+			background:rgb(109,109,109);
+			display:none;
+			position:absolute;
+			width:200px;
+		}
+		.menubar ul li:hover ul{
+			display:block;
+		}
+		
+		.menubar ul li ul li{
+
+			float:none;
+		}
+		.menubar ul li ul li a{
+			font-size:12px;
+			font-style:normal;
+			padding:0px 10px 0px 15px;
+
+			text-align:left;
+		}
+
+		article{
+			border:3px solid black;
+		}
+		.ani{
+			border:1px solid orange;
+			width:32%;
+			height:10%;
+			float:left;
+			margin:10px;
+			margin-right:5px;
+		}
+		.ani ul{padding:10px;}
+		.ani li{margin-left:30px;
+			line-height:200%;}
+		.img-wrap{
+			position:relative;
+			padding-top:100%;
+		}
+		.img-wrap img{
+			object-fit:cover;
+			position:absolute;
+			left:0;
+			top:0;
+			width:100%;
+			height:100%;
+		}
+		
+		footer{
+			clear:both;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<header>
+			<h1> 나의 애니 사이트</h1>
+			<div class="menubar">
+			<ul>
+			<li><a href="#">나의소개</a>
+				<ul>
+					<li><a href="https://khw970421.github.io/index.html">나의 소개 사이트</a></li>
+				</ul>
+			</li>
+			<li><a href="#" id="current">포켓몬</a>
+				<ul>
+					<li><a href="http://khw970421.dothome.co.kr/pkm_choice&explain.html">포켓몬 특징</a></li>
+					<li><a href="http://khw970421.dothome.co.kr/pkm_choice.html">포켓몬 고르기</a></li>
+				</ul>
+			</li>
+			<li><a href="#" id="current">코로나</a>
+			<ul>
+					<li><a href="https://github.com/khw970421/python-/blob/master/%EC%A7%80%EC%97%AD%EB%B3%84%EC%BD%94%EB%A1%9C%EB%82%98%EC%9D%B8%EC%9B%90%EC%88%98%EB%B9%84%EA%B5%90.ipynb">코로나 지역별 분포</a></li>
+					<li><a href="https://github.com/khw970421/python-/blob/master/hightempday.ipynb">가장더운날</a></li>
+				</ul>
+			</li>
+			</ul>
+		</div>
+		</header>
+		<article>
+			<div class="ani">
+				<div class="img-wrap">
+				<img src="https://w.namu.la/s/b0924d4deed2580244ce4860a624a10b072321e4f9ca49b44b0d1017c92b90db9e13c7df3993a2a52e6e0eec0892733df01e4d333f8280860bd94c6408fb0ae626b68cfaf0961fac05a1e156009e35f10529a9eb3395306772920f65da5b60a17a4044d18532edbff052fb781c83c057"></div>
+				<ul>
+					<li> 어떤 과학의 초전자포</li>
+					<li> 감독 : 나가이 타츠유키</li>
+					<li> 제작사: J.C.STAFF</li>
+					<li> OP:fianl phase</li>
+					<li> ED:nameless story</li>
+				</ul>
+			</div>
+			<div class="ani">
+				<div class="img-wrap">
+				<img src="https://w.namu.la/s/bc1ae3c0ab27899d22aa9f7a4b4038ec111f649d7f2dc7e3993cdcfde30f5485785bb35dc8ae4f5d339c6609445670b2482125e50b07fa5f8fb5e86d6e680b4d02326b43a978504546de04bebdb5e3be64a3d90f13cdf4947585ede1d7af90f606400dd97b255090596106a48905ad9c"></div>
+				<ul>
+					<li> 다윈즈게임</li>
+					<li> 감독 : 토쿠모토 요시노부</li>
+					<li> 제작사: Nexus</li>
+					<li> OP:Chain</li>
+					<li> ED:Alive</li>
+				</ul>
+			</div>
+			<div class="ani">
+				<div class="img-wrap">
+				<img src="https://ww.namu.la/s/a80653da8678de84fd2eabd425887762f19bb130f01648c97ae9b5d56949aa1730538fdc2e71768bb6cb099f78eb66d7fe173465148f907ffa928ef0bbd575c6ed003cf59f8160f6792104917a337344d572bac29a55309cd14ec139c19fd93c37dcae33e0e4eea03c5806a89b24436d"></div>
+				<ul>
+					<li> 플런더러</li>
+					<li> 감독 : 칸베 히로유키</li>
+					<li> 제작사: 플랜더러 제작위원회</li>
+					<li> OP:Plunderer</li>
+					<li> ED:Countless days</li>
+				</ul>
+			</div>
+		
+		</article>
+		<footer>
+			<div>Copyright 2020 Misaka</div>
+		</footer>
+	</div>
+</body>
+</html>
