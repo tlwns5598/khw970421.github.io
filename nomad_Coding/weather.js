@@ -53,3 +53,5 @@ function init(){
 	loadCoords();
 }
 init();
+
+console.log('check');
