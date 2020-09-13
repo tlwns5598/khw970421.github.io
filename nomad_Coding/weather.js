@@ -34,8 +34,7 @@ function handleGeoSuccess(position){
 	getWeather(latitude,longitude);
 }
 
-function askForCoords(){
-	navigator.geolocation.getCurrentPosition(handleGeoSuccess,handleGeoError);
+function askForCoords(){navigator.geolocation.getCurrentPosition(handleGeoSuccess,handleGeoError);
 }
 
 function loadCoords(){
