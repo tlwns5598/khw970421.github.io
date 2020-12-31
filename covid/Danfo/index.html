@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <script src="https://cdn.jsdelivr.net/npm/danfojs@0.1.2/dist/index.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/npm/danfojs@0.1.2/dist/index.min.js"></script>
 </head>
 <body>
 <div id="table"></div>
@@ -11,7 +11,7 @@
 
 <script>
     let df_sum;
-    dfd.read_csv('https://khw970421.github.io/covid/Project1/covidcity(changed).csv')
+    dfd.read_csv('http://khw970421.github.io/covid/Project1/covidcity(changed).csv')
         .then(function(data){
             data.plot('table').table();                             //표 내용 출력
             data['구분'] = data['구분'].str.replace(/[.]/g,"-");      // 1990.09.11 => 1990-09-11로 변환
