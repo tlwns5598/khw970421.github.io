@@ -1,6 +1,9 @@
-function alarm(){
-    console.log('@@@@@@');
+module.exports = {
+    p :function()
+    {
+        console.log('!!!!');
+    },
+    c : 10
+    ,
+    a : [10,20,30]
 }
-
-let a = 10;
-const b = 100;
