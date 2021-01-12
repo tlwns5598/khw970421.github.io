@@ -29,6 +29,9 @@
                     df.plot("plot_div").pie({ values: "Price", labels: "Type" })
                 }
             )
+            .catch(() => {
+                alert('저장된 데이터 이외의 날짜를 클릭했습니다.');
+            })
     });
 
 
