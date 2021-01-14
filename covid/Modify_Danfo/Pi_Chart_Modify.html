@@ -6,7 +6,7 @@
     <script src="https://cdn.jsdelivr.net/npm/danfojs@0.1.2/dist/index.min.js"></script>
 </head>
 <body>
-<h1>원하는 날짜의 코로나 지역별 증가수 확인 (현재 2020년 03월 04일 부터 03월 13일까지만 가능</h1>
+<h1>원하는 날짜의 코로나 지역별 증가수 확인 (현재 2020년 03월 04일 부터 03월 31일까지만 가능</h1>
 <input type="date" id="input">
 <button type="submit" id="but">입력버튼</button>
 
@@ -22,7 +22,7 @@
             .then(
                 function(data) {
                     const incDec_Length_Except_Sum = data.body__items__item__incDec.data.length-1;
-                    const gubun_Length_Except_Sum = data.body__items__item__gubun.data.length-1
+                    const gubun_Length_Except_Sum = data.body__items__item__gubun.data.length-1;
 
                     df = new dfd.DataFrame({
                         Price: data.body__items__item__incDec.data.slice(0,incDec_Length_Except_Sum),   //표의 맨 아래 합계를 제거한 내용들
@@ -37,6 +37,7 @@
                 alert('저장된 데이터 이외의 날짜를 클릭했습니다.');
             })
     });
+
 
 
 </script>

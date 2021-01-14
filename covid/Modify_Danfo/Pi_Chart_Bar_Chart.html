@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/danfojs@0.1.2/dist/index.min.js"></script>
+</head>
+<body>
+<h1>원하는 날짜의 코로나 지역별 증가수 확인 (현재 2020년 03월 04일 부터 03월 31일까지만 가능</h1>
+<input type="date" id="input"><br>
+<button type="submit" id="plot">원 차트 입력 버튼</button>
+<button type="submit" id="bar">막대 차트 입력 버튼</button><br>
+<button type="submit" id="cancel_plot">원 차트 삭제 버튼</button>
+<button type="submit" id="cancel_bar">막대 차트 삭제 버튼</button>
+
+<div id="table"></div>
+<div id="plot_div"></div>
+<div id="bar_div"></div>
+
+<script>
+    let input = document.getElementById('input')
+    let Plot_Button = document.getElementById('plot');
+    let Bar_Button = document.getElementById('bar');
+    let Cancel_Plot_Button = document.getElementById('cancel_plot');
+    let Cancel_Bar_Button = document.getElementById('cancel_bar');
+
+    Plot_Button.addEventListener('click',function(){
+        dfd.read_csv(`https://khw970421.github.io/covid/Modify_Danfo/Data/Date/${input.value.replace(/-/gi,'').slice(2,8)}.csv`)
+            .then(
+                function(data) {
+                    const incDec_Length_Except_Sum = data.body__items__item__incDec.data.length-1;
+                    const gubun_Length_Except_Sum = data.body__items__item__gubun.data.length-1;
+
+                    df = new dfd.DataFrame({
+                        Price: data.body__items__item__incDec.data.slice(0,incDec_Length_Except_Sum),   //표의 맨 아래 합계를 제거한 내용들
+                        Location : data.body__items__item__gubun.data.slice(0,gubun_Length_Except_Sum),
+                        Type: data.body__items__item__gubun.data.slice(0,gubun_Length_Except_Sum)
+                    })
+
+                    df.plot("plot_div").pie({ values: "Price", labels: "Type" })
+
+                }
+            )
+            .catch(() => {
+
+                alert('저장된 데이터 이외의 날짜를 클릭했습니다.');
+            })
+
+
+    });
+
+    Bar_Button.addEventListener('click',function(){
+        dfd.read_csv(`https://khw970421.github.io/covid/Modify_Danfo/Data/Date/${input.value.replace(/-/gi,'').slice(2,8)}.csv`)
+            .then(
+                function(data) {
+                    const incDec_Length_Except_Sum = data.body__items__item__incDec.data.length-1;
+                    const gubun_Length_Except_Sum = data.body__items__item__gubun.data.length-1;
+
+                    df = new dfd.DataFrame(
+                    {Price: data.body__items__item__incDec.data.slice(0,incDec_Length_Except_Sum)},   //표의 맨 아래 합계를 제거한 내용들
+                    { index: data.body__items__item__gubun.data.slice(0,gubun_Length_Except_Sum)}
+                    )
+                    df.plot("bar_div").bar()
+                }
+            )
+            .catch(() => {
+                alert('저장된 데이터 이외의 날짜를 클릭했습니다.');
+            })
+    });
+
+    Cancel_Plot_Button.addEventListener('click',function(){
+        if(document.getElementById('plot_div').childNodes[0]==undefined){
+            alert('삭제할 내용이 없어');
+            return 0;
+        }
+
+        let chart = confirm("원 차트를 지우겠습니까?");
+        if (chart == false)
+            alert('지우기 취소')
+        else
+            document.getElementById('plot_div').childNodes[0].remove();
+    })
+
+    Cancel_Bar_Button.addEventListener('click',function(){
+        if(document.getElementById('bar_div').childNodes[0]==undefined){
+            alert('삭제할 내용이 없어');
+            return 0;
+        }
+
+        let chart = confirm("막대 차트를 지우겠습니까?");
+        if(chart == false)
+            alert('지우기 취소')
+        else
+            document.getElementById('bar_div').childNodes[0].remove();
+    })
+</script>
+</body>
+</html>
