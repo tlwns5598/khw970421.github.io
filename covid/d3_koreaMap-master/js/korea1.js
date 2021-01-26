@@ -209,7 +209,6 @@ function drawMap(target) {
 
 
     });
-    setTimeout(function(){
 
-    },1000)
 }
+
