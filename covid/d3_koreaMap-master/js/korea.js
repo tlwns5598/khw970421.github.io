@@ -101,7 +101,7 @@ function drawMap(target) {
     let Plot_Button = document.getElementById('plot');
     let service;
 
-     Plot_Button.addEventListener('click',function(){
+    Plot_Button.addEventListener('click',function(){
         dfd.read_csv(`https://khw970421.github.io/covid/Modify_Danfo/Data/Date/${input.value.replace(/-/gi,'').slice(2,8)}.csv`)
             .then(
                 function(data) {
@@ -114,92 +114,92 @@ function drawMap(target) {
 
                     service = df.Price.data;
 
-                     let j = document.getElementById('label-Jeju-do')
-   let gn = document.getElementById('label-Gyeongsangnam-do')
-   let gb= document.getElementById('label-Gyeongsangbuk-do')
-   let jb = document.getElementById('label-Jeollabuk-do')
-   let jn = document.getElementById('label-Jeollanam-do')
-   let  cb= document.getElementById('label-Chungcheongbuk-do')
-   let  cn= document.getElementById('label-Chungcheongnam-do')
-   let  gw= document.getElementById('label-Gangwon-do')
-   let gg = document.getElementById('label-Gyeonggi-do')
-   let sj = document.getElementById('label-Sejong')
-   let us = document.getElementById('label-Ulsan')
-   let  dj= document.getElementById('label-Daejeon')
-   let  gj= document.getElementById('label-Gwangju')
-   let  ic= document.getElementById('label-Incheon')
-   let  dg= document.getElementById('label-Daegu')
-   let  bs= document.getElementById('label-Busan')
-   let  su= document.getElementById('label-Seoul')
+                    let j = document.getElementById('label-Jeju-do')
+                    let gn = document.getElementById('label-Gyeongsangnam-do')
+                    let gb= document.getElementById('label-Gyeongsangbuk-do')
+                    let jb = document.getElementById('label-Jeollabuk-do')
+                    let jn = document.getElementById('label-Jeollanam-do')
+                    let  cb= document.getElementById('label-Chungcheongbuk-do')
+                    let  cn= document.getElementById('label-Chungcheongnam-do')
+                    let  gw= document.getElementById('label-Gangwon-do')
+                    let gg = document.getElementById('label-Gyeonggi-do')
+                    let sj = document.getElementById('label-Sejong')
+                    let us = document.getElementById('label-Ulsan')
+                    let  dj= document.getElementById('label-Daejeon')
+                    let  gj= document.getElementById('label-Gwangju')
+                    let  ic= document.getElementById('label-Incheon')
+                    let  dg= document.getElementById('label-Daegu')
+                    let  bs= document.getElementById('label-Busan')
+                    let  su= document.getElementById('label-Seoul')
 
-                     j.addEventListener('mouseover',function(){
-                        j.setAttribute('alert',service[0]);
+                    j.addEventListener('mouseover',function(){
+                        j.setAttribute('title',service[0]);
 
-                     });
+                    });
                     gn.addEventListener('mouseover',function(){
-                        gn.setAttribute('alert',service[1]);
+                        gn.setAttribute('title',service[1]);
 
-                     });
+                    });
                     gb.addEventListener('mouseover',function(){
-                        gb.setAttribute('alert',service[2]);
+                        gb.setAttribute('title',service[2]);
 
-                     });
+                    });
                     jb.addEventListener('mouseover',function(){
-                        jb.setAttribute('alert',service[3]);
+                        jb.setAttribute('title',service[3]);
 
-                     });
+                    });
                     jn.addEventListener('mouseover',function(){
-                        jn.setAttribute('alert',service[4]);
+                        jn.setAttribute('title',service[4]);
 
-                     });
+                    });
                     cb.addEventListener('mouseover',function(){
-                        cb.setAttribute('alert',service[5]);
+                        cb.setAttribute('title',service[5]);
 
-                     });
+                    });
                     cn.addEventListener('mouseover',function(){
-                        cn.setAttribute('alert',service[6]);
+                        cn.setAttribute('title',service[6]);
 
-                     });
+                    });
                     gw.addEventListener('mouseover',function(){
-                        gw.setAttribute('alert',service[7]);
+                        gw.setAttribute('title',service[7]);
 
-                     });
+                    });
                     gg.addEventListener('mouseover',function(){
-                        gg.setAttribute('alert',service[8]);
+                        gg.setAttribute('title',service[8]);
 
-                     });
-                     sj.addEventListener('mouseover',function(){
-                        sj.setAttribute('alert',service[9]);
+                    });
+                    sj.addEventListener('mouseover',function(){
+                        sj.setAttribute('title',service[9]);
 
-                     });
+                    });
                     us.addEventListener('mouseover',function(){
-                        us.setAttribute('alert',service[10]);
+                        us.setAttribute('title',service[10]);
 
-                     });
+                    });
                     dj.addEventListener('mouseover',function(){
 
-                        dj.setAttribute('alert',service[11]);
-                     });
-                     gj.addEventListener('mouseover',function(){
+                        dj.setAttribute('title',service[11]);
+                    });
+                    gj.addEventListener('mouseover',function(){
 
-                        gj.setAttribute('alert',service[12]);
-                     });
-                     ic.addEventListener('mouseover',function(){
-                        ic.setAttribute('alert',service[13]);
+                        gj.setAttribute('title',service[12]);
+                    });
+                    ic.addEventListener('mouseover',function(){
+                        ic.setAttribute('title',service[13]);
 
-                     });
-                     dg.addEventListener('mouseover',function(){
-                        dg.setAttribute('alert',service[14]);
+                    });
+                    dg.addEventListener('mouseover',function(){
+                        dg.setAttribute('title',service[14]);
 
-                     });
-                     bs.addEventListener('mouseover',function(){
-                        bs.setAttribute('alert',service[15]);
+                    });
+                    bs.addEventListener('mouseover',function(){
+                        bs.setAttribute('title',service[15]);
 
-                     });
-                     su.addEventListener('mouseover',function(){
-                        su.setAttribute('alert',service[16]);
+                    });
+                    su.addEventListener('mouseover',function(){
+                        su.setAttribute('title',service[16]);
 
-                     });
+                    });
                 }
             )
             .catch(() => {
@@ -209,7 +209,6 @@ function drawMap(target) {
 
 
     });
-    setTimeout(function(){
 
-                 },1000)
 }
+
