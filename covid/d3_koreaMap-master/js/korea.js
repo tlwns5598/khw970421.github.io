@@ -2,7 +2,7 @@ window.onload = function() {
     drawMap('#container');
 };
 
-//지도 그리기
+//지도
 function drawMap(target) {
     var width = 700; //지도의 넓이
     var height = 700; //지도의 높이
@@ -113,7 +113,7 @@ function drawMap(target) {
                     })
 
                     service = df.Price.data;
-                   
+
                      let j = document.getElementById('label-Jeju-do')
    let gn = document.getElementById('label-Gyeongsangnam-do')
    let gb= document.getElementById('label-Gyeongsangbuk-do')
@@ -134,72 +134,72 @@ function drawMap(target) {
 
                      j.addEventListener('mouseover',function(){
                         j.setAttribute('alert',service[0]);
-                    
+
                      });
                     gn.addEventListener('mouseover',function(){
                         gn.setAttribute('alert',service[1]);
-                    
+
                      });
                     gb.addEventListener('mouseover',function(){
                         gb.setAttribute('alert',service[2]);
-                    
+
                      });
                     jb.addEventListener('mouseover',function(){
                         jb.setAttribute('alert',service[3]);
-                    
+
                      });
                     jn.addEventListener('mouseover',function(){
                         jn.setAttribute('alert',service[4]);
-                    
+
                      });
                     cb.addEventListener('mouseover',function(){
                         cb.setAttribute('alert',service[5]);
-                    
+
                      });
                     cn.addEventListener('mouseover',function(){
                         cn.setAttribute('alert',service[6]);
-                    
+
                      });
                     gw.addEventListener('mouseover',function(){
                         gw.setAttribute('alert',service[7]);
-                    
+
                      });
                     gg.addEventListener('mouseover',function(){
                         gg.setAttribute('alert',service[8]);
-                    
+
                      });
                      sj.addEventListener('mouseover',function(){
                         sj.setAttribute('alert',service[9]);
-                    
+
                      });
                     us.addEventListener('mouseover',function(){
                         us.setAttribute('alert',service[10]);
-                    
+
                      });
                     dj.addEventListener('mouseover',function(){
-                    
+
                         dj.setAttribute('alert',service[11]);
                      });
                      gj.addEventListener('mouseover',function(){
-                    
+
                         gj.setAttribute('alert',service[12]);
                      });
                      ic.addEventListener('mouseover',function(){
                         ic.setAttribute('alert',service[13]);
-                    
+
                      });
                      dg.addEventListener('mouseover',function(){
                         dg.setAttribute('alert',service[14]);
-                    
+
                      });
                      bs.addEventListener('mouseover',function(){
                         bs.setAttribute('alert',service[15]);
-                    
+
                      });
                      su.addEventListener('mouseover',function(){
                         su.setAttribute('alert',service[16]);
-                    
-                     });                
+
+                     });
                 }
             )
             .catch(() => {
@@ -210,6 +210,6 @@ function drawMap(target) {
 
     });
     setTimeout(function(){
-   
+
                  },1000)
 }
