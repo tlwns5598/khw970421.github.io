@@ -8,8 +8,9 @@ async function load () {
   ));
   datas.forEach(data => {
     get_sum.push(data.body__items__item__incDec.data[data.body__items__item__incDec.data.length - 1]);
-    get_date.push(data.body__items__item__stdDay.data[0]);
+    get_date.push(data.body__items__item__createDt.data[0].slice(2,10));
   })
+
   let df_sum1 = new dfd.DataFrame({'sum':get_sum},{index:get_date});  //df_sum은 Series 형태이므로 DataFrame 형태로 변환
   df_sum1.plot('plot').line();
 }
