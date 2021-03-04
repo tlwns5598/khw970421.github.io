@@ -1,6 +1,5 @@
 import {url} from './Data.js'
 
-
 const numberInput = document.getElementById('numberInput');
 
 numberInput.addEventListener('keyup',(e)=>checkClick(e))
@@ -55,10 +54,5 @@ function Set_Date(){
 }
 
 
-var testFolder = '../Data/Date';
-var fs = require('fs');
 
-fs.readdir(testFolder, function(error, filelist){
-  console.log(filelist.length);
-})
 
