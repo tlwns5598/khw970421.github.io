@@ -1,5 +1,6 @@
 import {url} from './Data.js'
 
+
 const numberInput = document.getElementById('numberInput');
 
 numberInput.addEventListener('keyup',(e)=>checkClick(e))
@@ -13,25 +14,29 @@ const checkClick = function(e){
 async function load (value) {
   const get_date = [];
   const get_sum = [];
-
-  const datas = await Promise.all(Set_Date().map(date =>
-    dfd.read_csv(`${url}${date}.csv`)
-  ));
-  datas.forEach(data => {
-    get_sum.push(data.body__items__item__incDec.data[data.body__items__item__incDec.data.length - 1]);
-    get_date.push(data.body__items__item__createDt.data[0].slice(2,10));
-  })
-  let newSum=[];
-  let newDate=[];
-  get_sum.forEach((sum,index)=>{
-    if(sum>value) {
-      newSum.push(sum);
-      newDate.push(get_date[index]);
-    }
-  })
-  const dataFrame = {'sum' : newSum, 'data' : newDate};
-  const df = new dfd.DataFrame(dataFrame);
-  df.plot('table').table();
+  try {
+    const datas = await Promise.all(Set_Date().map(date =>
+      dfd.read_csv(`${url}${date}.csv`)
+    ));
+    datas.forEach(data => {
+      get_sum.push(data.body__items__item__incDec.data[data.body__items__item__incDec.data.length - 1]);
+      get_date.push(data.body__items__item__createDt.data[0].slice(2, 10));
+    })
+    let newSum = [];
+    let newDate = [];
+    get_sum.forEach((sum, index) => {
+      if (sum > value) {
+        newSum.push(sum);
+        newDate.push(get_date[index]);
+      }
+    })
+    const dataFrame = {'sum': newSum, 'data': newDate};
+    const df = new dfd.DataFrame(dataFrame);
+    df.plot('table').table();
+  }
+  catch(err){
+    alert(err);
+  }
 }
 
 function Set_Date(){
@@ -49,4 +54,11 @@ function Set_Date(){
   return date_array;     //해당 배열을 반환한다.
 }
 
+
+var testFolder = '../Data/Date';
+var fs = require('fs');
+
+fs.readdir(testFolder, function(error, filelist){
+  console.log(filelist.length);
+})
 
