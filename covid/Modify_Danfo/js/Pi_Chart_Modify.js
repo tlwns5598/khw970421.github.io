@@ -21,7 +21,6 @@ function downloadCSV(location, increase){
     }
     val +=  "\r\n";
 
-    console.log(val);
   let downloadLink = document.createElement("a");
   let blob = new Blob(["\ufeff"+val], { type: "text/csv;charset=utf-8" });
   let url = URL.createObjectURL(blob);
