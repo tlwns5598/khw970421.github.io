@@ -17,11 +17,15 @@
 (4) Pi_Chart_Bar_Chart.html, Pi_Chart_Bar_Chart.js
 > 원하는 날짜를 지정한 후 해당날짜의 원차트 혹은 막대차트 출력 (취소 가능) 
  
- 
+ (5) d3_koreaMap-master
+ >원하는 날짜 적용 후 해당 도시 마우스 hover시 확진자 수 확인
+
  
  
  ### 해야할 일 
- 
-   1. 데이터 최신화
-   2. Set_Date 함수에서 for문의 숫자 매번 바꾸는 것을 좀 더 다른 방법 연구
+ 1. 데이터 최신화
+ 2. Daily_Total_Increase_Modify2.html 와 유사한 형태로
+ 어떤 날짜 입력시 그때까지의 
+ 격리해제 + 치료 중  +  사망 = 확진자 토탈 수 형태로 만들기
+  
 
