@@ -17,11 +17,15 @@
 (4) Pi_Chart_Bar_Chart.html, Pi_Chart_Bar_Chart.js
 > 원하는 날짜를 지정한 후 해당날짜의 원차트 혹은 막대차트 출력 (취소 가능) 
  
+  (4-1) Pi_Chart_Modify.html
+  > Pi_Chart_Bar_Chart.html 하위 버전으로 Pi_chart만 가능하나 현재 다운로드 기능은 여기에만 구현
+  
+ 
+ 
  (5) d3_koreaMap-master
  >원하는 날짜 적용 후 해당 도시 마우스 hover시 확진자 수 확인
 
- 
- 
+
  ### 해야할 일 
  1. 데이터 최신화
  2. Daily_Total_Increase_Modify2.html 와 유사한 형태로
