@@ -5,6 +5,36 @@ const barButton = document.getElementById('barButton')
 const cancelLine = document.getElementById('cancelLine')
 const cancelBar = document.getElementById('cancelBar')
 
+function downloadCSV(location, increase){
+  let array = [];
+  array.push(location);
+  array.push(increase);
+
+  let val = "";
+
+  // jquery 사용하지 않는 경우
+  for (let j = 0; j < location.length; j++) {
+    val += array[0][j]+',';
+  }
+  val +=  "\r\n";
+  for(let k=0;k<increase.length;k++){
+    val += array[1][k]+',';
+  }
+  val +=  "\r\n";
+
+  let downloadLink = document.createElement("a");
+  let blob = new Blob(["\ufeff"+val], { type: "text/csv;charset=utf-8" });
+  let url = URL.createObjectURL(blob);
+  downloadLink.href = url;
+  downloadLink.download = "data.csv";
+
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
+}
+
+
+
 const startLineChart = function(){
   load().then((value)=>{value.plot('line').line();})
 }
@@ -57,6 +87,9 @@ async function load () {
   })
 
   let df_sum = new dfd.DataFrame({'sum':get_sum},{index:get_date});  //df_sum은 Series 형태이므로 DataFrame 형태로 변환
+
+  document.querySelector('.but').addEventListener('click',()=>downloadCSV(df_sum.index_arr,df_sum.data));
+
   return df_sum;
   //df_sum.plot('bar').bar();
 }
