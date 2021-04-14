@@ -48,7 +48,7 @@ const cancelLineChart = function(){
     return 0;
   }
 
-  const chart = confirm("원 차트를 지우겠습니까?");
+  const chart = confirm("Line 차트를 지우겠습니까?");
   if (chart == false)
     alert('지우기 취소')
   else
@@ -61,7 +61,7 @@ const cancelBarChart = function(){
     return 0;
   }
 
-  const chart = confirm("원 차트를 지우겠습니까?");
+  const chart = confirm("Bar 차트를 지우겠습니까?");
   if (chart == false)
     alert('지우기 취소')
   else
